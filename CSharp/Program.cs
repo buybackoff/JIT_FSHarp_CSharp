@@ -33,17 +33,17 @@ namespace CSharpTest
                 using (Benchmark.Run("C# Ulong", 10000000, true))
                 {
                     
-                    for (var i = 0UL; i < 10000000UL; i++)
+                    for (var i = 0; i < 10000000; i++)
                     {
-                        sum1 += worker.Work(i);
+                        sum1 += worker.Work((ulong)i);
                     }
                 }
                 var sum2 = 0L;
                 using (Benchmark.Run("C# Long", 10000000, true))
                 {
-                    for (var i = 0L; i < 10000000L; i++)
+                    for (var i = 0; i < 10000000; i++)
                     {
-                        sum2 += worker.Work(i);
+                        sum2 += worker.Work((long)i);
                     }
                 }
 
@@ -54,7 +54,7 @@ namespace CSharpTest
             }
 
             Benchmark.Dump("C#");
-            Console.ReadLine();
+            // Console.ReadLine();
         }
     }
 }
