@@ -30,18 +30,18 @@ namespace CSharpTest
             for (int round = 0; round < 20; round++)
             {
                 var sum1 = 0UL;
-                using (Benchmark.Run("C# Ulong", 10000000, true))
+                using (Benchmark.Run("C# Ulong", 100000000, true))
                 {
                     
-                    for (var i = 0; i < 10000000; i++)
+                    for (var i = 0; i < 100000000; i++)
                     {
                         sum1 += worker.Work((ulong)i);
                     }
                 }
                 var sum2 = 0L;
-                using (Benchmark.Run("C# Long", 10000000, true))
+                using (Benchmark.Run("C# Long", 100000000, true))
                 {
-                    for (var i = 0; i < 10000000; i++)
+                    for (var i = 0; i < 100000000; i++)
                     {
                         sum2 += worker.Work((long)i);
                     }
